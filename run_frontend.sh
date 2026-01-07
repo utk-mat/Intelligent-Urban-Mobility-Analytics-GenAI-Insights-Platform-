@@ -18,3 +18,5 @@ echo ""
 
 streamlit run frontend/app.py
 
+
+

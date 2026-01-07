@@ -6,14 +6,10 @@ Objective: Enable natural-language analytics for decision-makers
 # ================================
 # CONFIGURATION
 # ================================
-import os
-from dotenv import load_dotenv
-
-load_dotenv()
 
 # Get API key from environment variable or use placeholder
-GROQ_API_KEY = os.getenv("GROQ_API_KEY", "your_groq_api_key_here")
-GROQ_MODEL = os.getenv("GROQ_MODEL", "llama-3.1-8b-instant")
+GROQ_API_KEY = "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"
+GROQ_MODEL = "llama-3.1-8b-instant"
 
 import json
 import pandas as pd

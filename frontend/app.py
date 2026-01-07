@@ -695,11 +695,19 @@ elif page == "🤖 GenAI Chatbot":
         @st.cache_resource
         def init_assistant():
             try:
-                assistant = MobilityGenAIAssistant()
+                # Use absolute paths relative to project root
+                project_root = Path(__file__).parent.parent
+                assistant = MobilityGenAIAssistant(
+                    data_path=str(project_root / "data" / "cleaned" / "cleaned_taxi_data.csv"),
+                    kpi_path=str(project_root / "outputs" / "kpi_report.txt"),
+                    sql_results_dir=str(project_root / "outputs" / "sql_results")
+                )
                 assistant.load_context()
                 return assistant
             except Exception as e:
                 st.error(f"Error initializing assistant: {e}")
+                import traceback
+                st.code(traceback.format_exc())
                 return None
         
         assistant = init_assistant()
@@ -773,9 +781,13 @@ elif page == "🤖 GenAI Chatbot":
                             if df is not None and 'pickup_month' in df.columns:
                                 current_month = df['pickup_month'].iloc[0]
                                 current_year = df['pickup_year'].iloc[0]
-                                summary = assistant.generate_monthly_summary(current_month, current_year)
+                                # Use answer_question instead of generate_monthly_summary
+                                question = f"Generate a comprehensive monthly summary for {current_month:02d}/{current_year} including key metrics, trends, and insights."
+                                summary = assistant.answer_question(question)
                                 st.session_state.messages.append({"role": "assistant", "content": f"**Monthly Summary for {current_month:02d}/{current_year}:**\n\n{summary}"})
                                 st.rerun()
+                            else:
+                                st.warning("Data not available for monthly summary.")
                         except Exception as e:
                             st.error(f"Error: {e}")
             

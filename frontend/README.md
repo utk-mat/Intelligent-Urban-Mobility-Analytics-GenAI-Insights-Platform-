@@ -100,3 +100,5 @@ The app will open in your default browser at `http://localhost:8501`
 - Large datasets may take time to load initially
 - Some features require specific data columns to be present
 
+
+
