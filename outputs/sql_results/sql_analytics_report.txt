@@ -1,0 +1,19 @@
+======================================================================
+SQL ANALYTICS REPORT
+======================================================================
+
+All query results have been saved as CSV files in:
+outputs/sql_results
+
+Query Files:
+----------------------------------------------------------------------
+1. peak_demand_hours.csv - Top 10 peak demand hours
+2. revenue_by_pickup_zone.csv - Revenue by pickup location
+3. top_revenue_days.csv - Top 10 highest revenue days
+4. avg_fare_by_weekday.csv - Average fare by weekday
+5. monthly_growth.csv - Monthly growth trends
+6. peak_vs_offpeak_analysis.csv - Peak vs Off-Peak comparison
+7. weekend_analysis.csv - Weekend vs Weekday comparison
+8. revenue_per_mile_analysis.csv - Revenue per mile by hour
+
+======================================================================

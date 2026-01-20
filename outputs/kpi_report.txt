@@ -1,0 +1,24 @@
+======================================================================
+MOBILITY ANALYTICS - KPI REPORT
+======================================================================
+
+Generated: 2026-01-08 02:39:59
+
+CORE KPIs
+----------------------------------------------------------------------
+Total Trips: 99,286
+Total Revenue: $1,463,910.56
+Average Trip Distance: 2.81 miles
+Average Fare per Trip: $11.87
+Average Tip Percentage: 13.71%
+Total Tips: $152,186.53
+Average Revenue per Mile: $7.99
+Average Trip Duration: 13.33 minutes
+Peak Hour Utilization: 38.31%
+Off-Peak Utilization: 61.69%
+
+MONTHLY REVENUE
+----------------------------------------------------------------------
+2015-01: $1,463,910.56
+
+======================================================================

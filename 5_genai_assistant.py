@@ -7,14 +7,18 @@ Objective: Enable natural-language analytics for decision-makers
 # CONFIGURATION
 # ================================
 
-# Get API key from environment variable or use placeholder
-GROQ_API_KEY = "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"
-GROQ_MODEL = "llama-3.1-8b-instant"
-
+import os
 import json
 import pandas as pd
 from pathlib import Path
+from dotenv import load_dotenv
 from groq import Groq
+
+load_dotenv()
+
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+GROQ_MODEL = os.getenv("GROQ_MODEL", "llama-3.1-8b-instant")
+
 
 
 class MobilityGenAIAssistant:
@@ -35,6 +39,9 @@ class MobilityGenAIAssistant:
         self.df = None
         self.kpi_summary = None
         self.sql_results = {}
+
+        if not GROQ_API_KEY:
+            raise ValueError("GROQ_API_KEY not found. Please set it in the .env file.")
 
         self.client = Groq(api_key=GROQ_API_KEY)
         print("✓ Initialized Groq LLM")
